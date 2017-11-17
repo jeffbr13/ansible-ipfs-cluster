@@ -3,8 +3,6 @@ galaxy_info:
   description: Collective pinning and composition for IPFS.
   license: MIT
   min_ansible_version: 2.2
-  dependencies:
-    - jeffbr13.ipfs
   platforms:
     - name: Ubuntu
       versions:
@@ -18,3 +16,5 @@ galaxy_info:
     - p2p
     - file
     - system
+dependencies:
+  - role: jeffbr13.ipfs
