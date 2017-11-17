@@ -17,7 +17,7 @@ Requirements
 Role Variables
 --------------
 
-As in [jeffbr13.ipfs], the IPFS peer ID and private key must be for each host in `host_vars`:
+As in [jeffbr13.ipfs](https://galaxy.ansible.com/jeffbr13/ipfs), the IPFS peer ID and private key must be for each host in `host_vars`:
 
 ```yaml
 ipfs_peer_id: ""      # see below
