@@ -14,7 +14,7 @@
     "listen_multiaddress": "{{ ipfs_cluster_listen_multiaddress }}",
     "state_sync_interval": "1m0s",
     "ipfs_sync_interval": "2m10s",
-    "replication_factor": "{{ ipfs_cluster_replication_factor }}",
+    "replication_factor": {{ ipfs_cluster_replication_factor }},
     "monitor_ping_interval": "15s"
   },
   "consensus": {
