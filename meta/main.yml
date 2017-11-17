@@ -1,0 +1,20 @@
+galaxy_info:
+  author: Ben Jeffrey
+  description: Collective pinning and composition for IPFS.
+  license: MIT
+  min_ansible_version: 2.2
+  dependencies:
+    - jeffbr13.ipfs
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+  galaxy_tags:
+    - ipfs
+    - ipfs-cluster
+    - daemon
+    - networking
+    - distributed
+    - p2p
+    - file
+    - system

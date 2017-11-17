@@ -1,3 +1,4 @@
+---
 - name: create download folder for ipfs-cluster
   become: yes
   file:
@@ -10,7 +11,7 @@
   become: yes
   unarchive:
     remote_src: yes
-    src: "{{ dist_url }}/{{ item }}/{{ipfs_cluster_version}}/{{ item }}_{{ipfs_cluster_version}}_linux-{{ipfs_cluster_arch}}.tar.gz"
+    src: "{{ ipfs_cluster_dist_url }}/{{ item }}/{{ipfs_cluster_version}}/{{ item }}_{{ipfs_cluster_version}}_linux-{{ipfs_cluster_arch}}.tar.gz"
     dest: /opt/ipfs-cluster/{{ipfs_cluster_version}}
     creates: /opt/ipfs-cluster/{{ipfs_cluster_version}}/{{ item }}
   with_items:
@@ -32,7 +33,7 @@
 - name: install ipfs-cluster init service
   become: yes
   copy:
-    src: etc/systemd/system/ipfs-cluster.service
+    src: ipfs-cluster.service
     dest: /etc/systemd/system/ipfs-cluster.service
     owner: root
     group: root
