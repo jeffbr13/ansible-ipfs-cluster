@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - ipfs-cluster
+  vars:
+    ipfs_peer_id:
+    ipfs_private_key:
+    ipfs_cluster_secret:
