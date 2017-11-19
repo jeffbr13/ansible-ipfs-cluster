@@ -14,6 +14,7 @@ install:
   - ansible --version
   # Create ansible.cfg with correct roles_path
   - 'printf "[defaults]\nroles_path=../" > ansible.cfg'
+  - ansible-galaxy install jeffbr13.ipfs
 
 env:
   - ANSIBLE_HOST_KEY_CHECKING=False
