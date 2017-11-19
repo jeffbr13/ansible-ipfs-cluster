@@ -17,18 +17,27 @@ Requirements
 Role Variables
 --------------
 
-As in [jeffbr13.ipfs](https://galaxy.ansible.com/jeffbr13/ipfs), the IPFS peer ID and private key must be for each host in `host_vars`:
+### Required Variables
+
+As in [jeffbr13.ipfs](https://galaxy.ansible.com/jeffbr13/ipfs),
+the IPFS peer ID and private key must be set for each host in `host_vars`:
 
 ```yaml
 ipfs_peer_id: ""      # see below
 ipfs_private_key: ""  # ipfs-key | base64
 ```
 
-You must also generate an `ipfs_cluster_secret` to be shared by all hosts.
-The following variables are available across the playbook:
+You must also generate an `ipfs_cluster_secret` to be shared by all hosts:
 
 ```yaml
 ipfs_cluster_secret: ""   # openssl rand -hex 32
+```
+
+### Optional Variables
+
+The following variables are available across the playbook:
+
+```yaml
 ipfs_cluster_dist_url: https://dist.ipfs.io
 ipfs_cluster_version: v0.2.1
 ipfs_cluster_arch: amd64
