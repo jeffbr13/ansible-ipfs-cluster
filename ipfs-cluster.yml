@@ -1,8 +1,0 @@
-- hosts: ipfs
-  roles:
-    - ipfs-cluster
-  vars:
-    dist_url: https://dist.ipfs.io
-    ipfs_cluster_version: v0.2.1
-    ipfs_cluster_arch: amd64
-    ipfs_cluster_secret: "cf406a9fb6b9efb8180fb6a010479b0ca1272365cb077f11d0045b5ae5f2b1c7"
