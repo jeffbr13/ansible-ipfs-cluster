@@ -3,7 +3,7 @@
     "secret": "{{ ipfs_cluster_secret }}",
     "id": "{{ ipfs_peer_id }}",
     "private_key": "{{ ipfs_private_key }}",
-    "cluster_peers": [
+    "peers": [
       {% for host in ansible_play_hosts %}
       "{{ hostvars[host]['ipfs_cluster_listen_multiaddress'] }}/ipfs/{{ hostvars[host]['ipfs_peer_id'] }}"{% if not loop.last %},{% endif %}
 
