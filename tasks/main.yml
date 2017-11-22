@@ -62,6 +62,22 @@
     owner: ipfs
     group: ipfs
   notify: restart IPFS Cluster
+  register: ipfs_cluster_configuration
+
+- name: stop ipfs-cluster on configuration change
+  become: yes
+  service:
+    name: ipfs-cluster
+    state: stopped
+    use: systemd
+  when: ipfs_cluster_configuration.changed
+
+- name: destroy ipfs-cluster state on configuration change
+  become: yes
+  file:
+    path: /home/ipfs/.ipfs-cluster/ipfs-cluster-data
+    state: absent
+  when: ipfs_cluster_configuration.changed
 
 - name: reload systemd
   become: yes
