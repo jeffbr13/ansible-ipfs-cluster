@@ -5,7 +5,7 @@
     "private_key": "{{ ipfs_private_key }}",
     "cluster_peers": [
       {% for host in ansible_play_hosts %}
-      "/ip4/{{ hostvars[host]['ansible_default_ipv4']['address'] }}/tcp/9096/ipfs/{{ hostvars[host]['ipfs_peer_id'] }}"{% if not loop.last %},{% endif %}
+      "{{ hostvars[host]['ipfs_cluster_listen_multiaddress'] }}/ipfs/{{ hostvars[host]['ipfs_peer_id'] }}"{% if not loop.last %},{% endif %}
 
       {% endfor %}
     ],

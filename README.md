@@ -42,13 +42,16 @@ ipfs_cluster_dist_url: https://dist.ipfs.io
 ipfs_cluster_version: v0.2.1
 ipfs_cluster_arch: amd64
 ipfs_cluster_replication_factor: -1   # replicate files to all nodes
-ipfs_cluster_listen_multiaddress: /ip4/0.0.0.0/tcp/9096
+ipfs_cluster_listen_multiaddress: "/ip4/{{ ansible_default_ipv4.address }}/tcp/9096"
 ipfs_cluster_http_api_listen_multiaddress: /ip4/127.0.0.1/tcp/9094
 ipfs_cluster_http_gateway_listen_multiaddress: /ip4/127.0.0.1/tcp/9095
 ```
 
 You can generate the `ipfs_cluster_secret` by running `openssl rand -hex 32`,
 or, if you don't have OpenSSL, `od  -vN 32 -An -tx1 /dev/urandom | tr -d ' \n' ; echo`.
+
+ipfs-cluster listens on the machine's default IPv4 address (`ansible_default_ipv4`) as ascertained by Ansible.
+To customise this, e.g. for a private network, override `ipfs_cluster_listen_multiaddress`.
 
 
 Example Playbook
